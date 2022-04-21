@@ -1,0 +1,97 @@
+body {
+  color: whitesmoke;
+}
+
+.global-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.form {
+  overflow: hidden;
+  position: relative;
+
+  &__card {
+    background-color: aliceblue;
+    border: 10px solid aliceblue;
+    border-radius: 0.75em;
+    padding: 0.5em;
+    max-width: 400px;
+    margin: 0 auto;
+    animation: fade 400ms ease-in-out forwards;
+
+    &.active {
+      animation: slide 400ms 200ms ease-in-out both;
+    }
+  }
+}
+
+.hide {
+  display: none;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2em;
+  gap: 0.25em;
+
+  &:last-child {
+    margin: 0;
+  }
+
+  > label {
+    font-weight: bold;
+    font-size: 0.8em;
+    color: #333;
+  }
+
+  > input {
+    border-radius: 0.25em;
+    border: 1px solid #333;
+    font-size: 1em;
+    padding: 0.25em;
+  }
+}
+
+.step-title {
+  color: #333;
+  margin: 0;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(200%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.75);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
