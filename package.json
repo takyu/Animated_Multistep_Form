@@ -7,11 +7,15 @@
   "license": "MIT",
   "scripts": {
     "dev": "webpack --color --progress",
-    "start": "webpack serve --color --progress"
+    "start": "webpack serve --color --progress",
+    "prod": "webpack --color --progress --config webpack.config.prod.js",
+    "predeploy": "webpack --color --progress --config webpack.config.prod.js",
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.7.1",
+    "gh-pages": "^3.2.3",
     "html-webpack-plugin": "^5.5.0",
     "sass": "^1.50.1",
     "sass-loader": "^12.6.0",
